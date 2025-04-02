@@ -5,12 +5,73 @@
   "main": "main.js",
   "scripts": {
     "start": "electron .",
+    "generate-icons": "node generate-icons.js",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder",
+    "build": "npm run generate-icons && npm run dist",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": ["Instagram", "mock", "electron"],
-  "author": "",
+  "keywords": [
+    "Instagram",
+    "mock",
+    "electron"
+  ],
+  "author": "Knight Lab",
   "license": "ISC",
   "devDependencies": {
-    "electron": "^29.1.0"
+    "electron": "^29.1.0",
+    "electron-builder": "^24.9.1",
+    "svg2img": "^1.0.0-beta.2"
+  },
+  "build": {
+    "appId": "com.knightlab.instagrammock",
+    "productName": "Instagram Mock Creator",
+    "mac": {
+      "category": "public.app-category.graphics-design",
+      "target": [
+        "dmg",
+        "zip"
+      ],
+      "icon": "build/icons/icon.png",
+      "darkModeSupport": true
+    },
+    "dmg": {
+      "contents": [
+        {
+          "x": 130,
+          "y": 220
+        },
+        {
+          "x": 410,
+          "y": 220,
+          "type": "link",
+          "path": "/Applications"
+        }
+      ],
+      "window": {
+        "width": 540,
+        "height": 380
+      }
+    },
+    "files": [
+      "**/*",
+      "!**/node_modules/*/{CHANGELOG.md,README.md,README,readme.md,readme}",
+      "!**/node_modules/*/{test,__tests__,tests,powered-test,example,examples}",
+      "!**/node_modules/*.d.ts",
+      "!**/node_modules/.bin",
+      "!**/*.{iml,o,hprof,orig,pyc,pyo,rbc,swp,csproj,sln,xproj}",
+      "!.editorconfig",
+      "!**/._*",
+      "!**/{.DS_Store,.git,.hg,.svn,CVS,RCS,SCCS,.gitignore,.gitattributes}",
+      "!**/{__pycache__,thumbs.db,.flowconfig,.idea,.vs,.nyc_output}",
+      "!**/{appveyor.yml,.travis.yml,circle.yml}",
+      "!**/{npm-debug.log,yarn.lock,.yarn-integrity,.yarn-metadata.json}",
+      "!**/clean-repo.sh",
+      "!**/.git*",
+      "!**/generate-icons.js"
+    ]
+  },
+  "dependencies": {
+    "electron-squirrel-startup": "^1.0.1"
   }
-} 
+}

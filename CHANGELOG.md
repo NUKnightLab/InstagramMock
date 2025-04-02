@@ -143,3 +143,10 @@
 +   - Created clean-repo.sh script for repository maintenance
 +   - Fixed GitHub push errors related to files exceeding size limits
 +   - Optimized repository size for better cloning and collaboration 
++ - macOS Application Build Support:
++   - Added electron-builder configuration for creating a native macOS application
++   - Integrated Instagram app logo as the application icon
++   - Created script to generate app icons in multiple sizes
++   - Added native macOS menu with standard options
++   - Improved window configuration with proper title and dimensions
++   - Configured DMG installer with drag-to-Applications folder 
