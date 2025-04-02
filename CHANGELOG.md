@@ -138,3 +138,8 @@
 +   - Added comprehensive .gitignore file to exclude node_modules and other unnecessary files
 +   - Prevents accidentally committing dependencies, logs, and OS/editor files
 +   - Includes Electron-specific exclusions for build processes 
++ - Repository maintenance:
++   - Cleaned up repository history to remove large files and node_modules
++   - Created clean-repo.sh script for repository maintenance
++   - Fixed GitHub push errors related to files exceeding size limits
++   - Optimized repository size for better cloning and collaboration 
