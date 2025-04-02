@@ -134,3 +134,7 @@
 +   - Removed unnecessary conditional check that was preventing preview updates
 +   - Ensured that all dragging actions immediately update the carousel view
 +   - Improved the connection between the thumbnail grid and the Swiper carousel 
++ - Project maintenance improvements:
++   - Added comprehensive .gitignore file to exclude node_modules and other unnecessary files
++   - Prevents accidentally committing dependencies, logs, and OS/editor files
++   - Includes Electron-specific exclusions for build processes 
